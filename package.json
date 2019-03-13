@@ -1,0 +1,14 @@
+{
+  "name": "tensorzuev-vote",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tensorzuev/tepmlate-engine.git"
+  },
+  "files": [
+    "function/*"
+  ],
+  "devDependencies": {
+    "typescript": "next"
+  }
+}

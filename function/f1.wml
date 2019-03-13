@@ -1,0 +1,12 @@
+<div class="my-example" title="{{mytitle}}">
+   <Controls.buttons:Button caption="some string"  attr:class="my-class">
+      <ws:content>
+         <SomeModule.somelib:SomeControl
+            caption="inner caption "
+            color="red"
+            second="{{content.propFromBtn}}"
+            value="{{myValue.field}}"
+            attr:class="my-class2" />
+      </ws:content>
+   </Controls.buttons:Button>
+</div>
