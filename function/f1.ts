@@ -97,13 +97,14 @@ export function template(scope: Control, prevScope: HashMap<string>, attributes:
    }, [helper.getter(["myValue", "field"], data, prevScope) ]);
 
 
+   const __options2 = generator.getMemoData(rootKey, ()=>  {
+      return {
+         content: generator.createElement('Controls/buttons:Button', __options1, __attr2, localDeps, defCollection)
+      };
+   }, [__options1, __attr2]);
+
    out = generator.joinElements([
-      generator.createTag( 'div',
-                  __attr1,
-         [
-                     generator.createControl('Controls/buttons:Button', __options1, __attr2, localDeps, defCollection)
-                  ]
-      )
+      generator.createElement( 'div', __options2, __attr1 )
 
    ]);
 

@@ -18,14 +18,17 @@ declare type TemplateObject  = {
 
 declare type Generator  = {
    joinElements:  (arr: Array<Promise<TemplateObject>>) => Promise<TemplateObject>;
-   createTag: (nameTag: string,
-               attributes: Attribute,
-               children: Array<Promise<TemplateObject>>) => Promise<TemplateObject>;
+   createTag: (type: string,
+               options: { content: Promise<TemplateObject> },
+               attributes: Attribute) => Promise<TemplateObject>;
+
    createControl: (typeControl: string,
-                   options: HashMap<unknown>,
+                   options: HashMap<any>,
                    attributes: Attribute,
                    localDeps: HashMap<() => {}>,
                    defCollection: unknown) => Promise<TemplateObject>;
+   createText: () => Promise<TemplateObject>;
+
    getMemoData: (rootKey: string,
                  fn: (dep1?: any, dep2?: any) => HashMap<unknown>,
                  deps: Array<unknown>
